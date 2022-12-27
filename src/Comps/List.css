@@ -38,9 +38,11 @@ button {
 .bxs-edit-alt {
     color: rgb(67, 135, 246);
     margin-right: 0.300rem;
+    cursor: pointer;
 }
 
 .bxs-trash {
     color: red;
     margin-left: 0.300rem;
+    cursor: pointer;
 }
