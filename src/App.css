@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kanit', sans-serif;
+}
+
+section {
+  padding: 1rem;
+  max-width: 545px;
+  margin: 0 auto;
+}
+
+.title-form-container {
+  display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+section h2 {
+  font-size: 1.2rem;
+  width: 70%;
+  text-align: center;
+  margin: 0.500rem 0;
+}
+
+section h3 {
+  font-size: 1rem;
+  width: 70%;
+  text-align: center;
+  margin: 0.500rem 0;
+  color: rgb(207, 97, 250);
+}
+
+.add-reminder-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.500rem;
+}
+
+.input-inactive {
+  background-color: black;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.form-inactive {
+  pointer-events: none;
+}
+
+.input-label-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0.700rem 0;
+  width: 100%;
+}
+
+label {
+  font-weight: 600;
+}
+
+.add-reminder-input {
+  width: 60%;
+  transition: border-bottom 250ms;
+  margin-top: 0.300rem;
+  border: 0;
+  border-bottom: 1px solid rgb(174, 174, 174);
+}
+
+input:focus {
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid rgb(0, 156, 255);
+}
+
+input:focus-visible {
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid rgb(0, 156, 255);
+}
+
+
+.reminder-form-btn {
+  width: 80%;
+  margin: 0.700rem 0;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: border 150ms, color 150ms;
+}
+
+.ADD {
+  color: rgb(207, 97, 250);
+  border: 1px solid rgb(207, 97, 250);
+}
+
+.EDITING {
+  color: rgb(67, 135, 246);
+  border: 1px solid rgb(67, 135, 246);
+}
+
+.ADDED {
+  color: rgb(18, 248, 6);
+  border: 1px solid rgb(18, 248, 6);
+}
+
+.list-container {
+  padding: 1rem 0.500rem;
+}
+.edit-reminder-container {
+  background-color: white;
+  border: 1px solid rgb(215, 214, 214);
+}
+
+.edit-reminder-form {
+  width: 100%;
+/*   display: flex;
+  justify-content: space-between; */
+  padding: 1rem;
+}
+
+.edit-reminder-input {
+  width: 70%;
+  margin: 0.500rem 0;
+  border: 0;
+  border-bottom: 1px solid rgb(174, 174, 174);
+}
+
+.remove-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  margin-top: 1rem;
+}
+
+
+.edit-reminder-btn {
+  width: 60%;
+  padding: 0 0.600rem;
+  margin-right: 0.500rem;
+  font-weight: 700;
+  border-radius: 10px;
+  color: rgb(207, 97, 250);
+  border: 1px solid rgb(207, 97, 250);
+}
+
+.clear-list-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.clear-list-btn {
+  width: 80%;
+  outline: 0;
+  border: 0;
+  margin: 2.5rem 0;
+  font-weight: 700;
+  border-radius: 10px;
+  color: red;
+  border: 1px solid red;
+}
+
+@media (min-width: 576px) {
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  section h3 {
+    font-size: 1.2rem;
+  }
+
+  input, p{
+    font-size: 1.1rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
+
+

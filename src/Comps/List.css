@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+.reminder-container {
+    border-bottom: 1px solid rgb(215, 214, 214);
+    margin-top: 1.5rem;
+}
+
+
+.reminder-container:first-child {
+    margin-top: 0;
+}
+
+.reminder-subcontainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.300rem;
+}
+
+.reminder-date {
+    font-size: 0.875rem;
+}
+
+.bxs-edit-alt,
+.bxs-trash {
+    font-size: 1rem;
+    padding: 0.200rem;
+}
+
+.bxs-edit-alt {
+    color: rgb(67, 135, 246);
+    margin-right: 0.300rem;
+}
+
+.bxs-trash {
+    color: red;
+    margin-left: 0.300rem;
+}
