@@ -11,6 +11,10 @@ section {
   margin: 0 auto;
 }
 
+button {
+  cursor: pointer;
+}
+
 .title-form-container {
   display: flex;
 flex-direction: column;
