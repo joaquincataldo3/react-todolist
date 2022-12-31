@@ -1,19 +1,28 @@
 
-import './App.css';
-import { useState } from 'react';
 import List from './Comps/List';
+import InputError from './Comps/InputError';
+import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
+
+import './App.css';
 
 function App() {
 
-  const [name, setName] = useState('');
-  const [nameBeingEdited, setNameBeingEdited] = useState('');
+  const [toDo, setToDo] = useState('');
   const [scheduledDate, setScheduledDate] = useState('');
-  const [scheduledDateBeingEdited, setScheduledDateBeingEdited] = useState('')
+
+  const [nameBeingEdited, setNameBeingEdited] = useState('');
+  const [scheduledDateBeingEdited, setScheduledDateBeingEdited] = useState('');
+
   const [list, setList] = useState([]);
+
   const [isAdded, setIsAdded] = useState(false);
+
   const [isEditing, setIsEditing] = useState(false);
   const [currentEditId, setCurrentEditId] = useState(null);
+
+  const [toDoEmpty, setToDoEmpty] = useState(false);
+  const [scheduledDateEmpty, setScheduledDateEmpty] = useState(false);
 
 
   const convertDate = (date) => {
@@ -24,11 +33,11 @@ function App() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault()
-    if (name && scheduledDate && !isEditing) {
+    if (toDo && scheduledDate && !isEditing) {
       const newDate = convertDate(scheduledDate);
       const objectToAdd = {
         id: uuid(),
-        reminder: name,
+        reminder: toDo,
         date: scheduledDate,
         dateString: newDate
       };
@@ -38,17 +47,25 @@ function App() {
         setIsAdded(false)
       }, 1000);
       setScheduledDate('');
-      setName('')
+      setToDo('')
       return () => {
         clearTimeout(timeOut) //cleanup function
       }
+    } else if (toDo && !scheduledDate){
+      setToDoEmpty(false)
+      setScheduledDateEmpty(true);
+    } else if (!toDo && scheduledDate) {
+      setToDoEmpty(true)
+      setScheduledDateEmpty(false);
+    } else {
+      setScheduledDateEmpty(true);
+      setToDoEmpty(true);
     }
   }
 
   const handleEditFormSubmit = (e) => {
     e.preventDefault();
     if (nameBeingEdited && scheduledDateBeingEdited) {
-      console.log('entro')
       const newDate = convertDate(scheduledDateBeingEdited);
       setList(list.map(item => {
         if (item.id === currentEditId) {
@@ -65,7 +82,7 @@ function App() {
 
   const handleRemoveItem = (idToDelete) => {
     const arrayFiltered = list.filter(reminder => {
-      return reminder.id != idToDelete
+      return reminder.id !== idToDelete
     });
     setList(arrayFiltered);
     setIsEditing(false)
@@ -73,7 +90,7 @@ function App() {
 
   const handleClearList = () => {
     setList([]);
-    setName('');
+    setToDo('');
     setScheduledDate('')
   }
 
@@ -98,10 +115,10 @@ function App() {
 
           <div className='input-label-container'>
 
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">To do</label>
             <input type="text" name='name' className='add-reminder-input'
-              onChange={(e) => setName(e.target.value)} value={name} placeholder='Meeting with Alex...' />
-
+              onChange={(e) => setToDo(e.target.value)} value={toDo} placeholder='Meeting with Alex...' />
+            {toDoEmpty && <InputError error={'type a name for the todo'}/>}
           </div>
 
           <div className='input-label-container'>
@@ -109,7 +126,7 @@ function App() {
             <label htmlFor="date">Date</label>
             <input type="date" name='date' className='add-reminder-input'
               onChange={(e) => setScheduledDate(e.target.value)} value={scheduledDate} />
-
+            {scheduledDateEmpty && <InputError error={'select a date'}/>}
           </div>
 
           <button type='Submit' className={`reminder-form-btn ${isAdded ? 'ADDED' : isEditing ? 'EDITING' : 'ADD'} `}>{isAdded ? 'ADDED' : isEditing ? 'EDITING' : 'ADD'}</button>;

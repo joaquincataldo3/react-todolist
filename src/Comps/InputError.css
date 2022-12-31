@@ -1,0 +1,15 @@
+.error-container {
+    margin-top: 0.500rem;
+}
+
+.error-p {
+    font-size: 0.75rem;
+    color: red;
+}
+
+@media (min-width: 576px) {
+    .error-p {
+        font-size: 0.875rem;
+    }
+    
+}
