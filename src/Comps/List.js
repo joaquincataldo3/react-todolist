@@ -4,8 +4,8 @@ import './List.css';
 
 function List(props) {
 
-  const { list, handleEditReminder} = props;
-  
+  const { list, handleEditReminder, handleTaskDone } = props;
+
 
   return (
     <>
@@ -16,7 +16,11 @@ function List(props) {
               <p className='reminder-date'>{reminder.dateString}</p>
               <div className='reminder-subcontainer'>
                 <p className='reminder-name'>{reminder.reminder}</p>
-                <i className='bx bxs-edit-alt' onClick={() => handleEditReminder(reminder.id)}></i>
+                <div>
+                  <i className='bx bx-check-circle' onClick={() => handleTaskDone(reminder.id)}></i>
+                  <i className='bx bxs-edit-alt' onClick={() => handleEditReminder(reminder.id)}></i>
+                </div>
+
               </div>
             </div>
 

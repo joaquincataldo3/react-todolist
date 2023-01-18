@@ -80,7 +80,7 @@ function App() {
     }
   }
 
-  const handleRemoveItem = (idToDelete) => {
+  const handleTaskDone = (idToDelete) => {
     const arrayFiltered = list.filter(reminder => {
       return reminder.id !== idToDelete
     });
@@ -143,7 +143,7 @@ function App() {
               </div>
               <div className='remove-container'>
                 <input type="submit" value={'SUBMIT'} className='edit-reminder-btn' />
-                <i className='bx bxs-trash' onClick={() => { handleRemoveItem(currentEditId) }}></i>
+                
               </div>
             </form>
 
@@ -152,7 +152,7 @@ function App() {
         {
           list.length > 0 && !isEditing &&
           <>
-            <List list={list} handleRemoveItem={handleRemoveItem} handleEditReminder={handleEditReminder} />
+            <List list={list} handleTaskDone={handleTaskDone} handleEditReminder={handleEditReminder} />
             <div className='clear-list-btn-container'>
               <button className='clear-list-btn' onClick={handleClearList}>CLEAR LIST</button>
             </div>
