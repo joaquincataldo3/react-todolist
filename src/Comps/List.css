@@ -41,8 +41,13 @@ button {
     cursor: pointer;
 }
 
+.bx-check-circle {
+    cursor: pointer;
+}
+
 .bxs-trash {
     color: red;
     margin-left: 0.300rem;
     cursor: pointer;
 }
+
