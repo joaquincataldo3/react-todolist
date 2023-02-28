@@ -1,9 +1,12 @@
-# Hi there, my name is Joaquin and this is a React project.
+# Thanks for checking out this repository
 
-Thank you for checking out this repository.
+This project was deployed on https://react-todolist-theta.vercel.app/
 
-I set up a to do list mainly using hooks and React features.
+## Overview
 
-Deployed on: https://react-todolist-theta.vercel.app/
+This project is a TODOLIST built on React, where the user is able to create, update and delete a reminder.
 
-More projects in https://github.com/joaquincataldo3
+
+Joaquín Cataldo
+Full Stack Developer
+
