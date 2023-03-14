@@ -5,10 +5,17 @@
   font-family: 'Kanit', sans-serif;
 }
 
+body {
+  background-color: #97DEFF;
+}
+
 section {
   padding: 1rem;
   max-width: 545px;
-  margin: 0 auto;
+  margin: 3rem auto;
+  border-radius: 7px;
+  background-color: white;
+
 }
 
 button {
@@ -34,7 +41,7 @@ section h3 {
   width: 70%;
   text-align: center;
   margin: 0.500rem 0;
-  color: rgb(207, 97, 250);
+  color: #97DEFF;
 }
 
 .add-reminder-form {
@@ -60,30 +67,33 @@ section h3 {
   flex-direction: column;
   margin: 0.700rem 0;
   width: 100%;
+  align-items: center;
 }
 
 label {
   font-weight: 600;
+  width: 70%;
 }
 
 .add-reminder-input {
-  width: 60%;
+  width: 70%;
   transition: border-bottom 250ms;
   margin-top: 0.300rem;
-  border: 0;
-  border-bottom: 1px solid rgb(174, 174, 174);
+  border: 1px solid rgb(174, 174, 174);
+  border-radius: 10px;
+  padding: 5px;
 }
 
 input:focus {
   border: 0;
   outline: 0;
-  border-bottom: 1px solid rgb(0, 156, 255);
+  border-bottom: 1px solid rgb(166, 166, 166);
 }
 
 input:focus-visible {
   border: 0;
   outline: 0;
-  border-bottom: 1px solid rgb(0, 156, 255);
+  border-bottom: 1px solid rgb(166, 166, 166);
 }
 
 
@@ -93,16 +103,17 @@ input:focus-visible {
   font-weight: 700;
   border-radius: 10px;
   transition: border 150ms, color 150ms;
+  background-color: white;
 }
 
 .ADD {
-  color: rgb(207, 97, 250);
-  border: 1px solid rgb(207, 97, 250);
+  color: #AA77FF;
+  border: 1px solid #AA77FF;
 }
 
 .EDITING {
-  color: rgb(67, 135, 246);
-  border: 1px solid rgb(67, 135, 246);
+  color: #AA77FF;
+  border: 1px solid #AA77FF;
 }
 
 .ADDED {
@@ -114,8 +125,17 @@ input:focus-visible {
   padding: 1rem 0.500rem;
 }
 .edit-reminder-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
   border: 1px solid rgb(215, 214, 214);
+}
+
+.edit-reminder-inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .edit-reminder-form {
@@ -138,6 +158,12 @@ input:focus-visible {
   margin-top: 1rem;
 }
 
+.edit-reminder-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 
 .edit-reminder-btn {
   width: 60%;
@@ -145,8 +171,9 @@ input:focus-visible {
   margin-right: 0.500rem;
   font-weight: 700;
   border-radius: 10px;
-  color: rgb(207, 97, 250);
-  border: 1px solid rgb(207, 97, 250);
+  color: #AA77FF;
+  border: 1px solid #AA77FF;
+  background-color: white;
 }
 
 .clear-list-btn-container {
@@ -163,6 +190,7 @@ input:focus-visible {
   border-radius: 10px;
   color: red;
   border: 1px solid red;
+  background-color: white;
 }
 
 @media (min-width: 576px) {

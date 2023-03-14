@@ -34,6 +34,8 @@ function App() {
   const handleFormSubmit = (e) => {
     e.preventDefault()
     if (toDo && scheduledDate && !isEditing) {
+      setToDoEmpty(false)
+      setScheduledDateEmpty(false);
       const newDate = convertDate(scheduledDate);
       const objectToAdd = {
         id: uuid(),
@@ -66,6 +68,8 @@ function App() {
   const handleEditFormSubmit = (e) => {
     e.preventDefault();
     if (nameBeingEdited && scheduledDateBeingEdited) {
+      setToDoEmpty(false)
+      setScheduledDateEmpty(false);
       const newDate = convertDate(scheduledDateBeingEdited);
       setList(list.map(item => {
         if (item.id === currentEditId) {
@@ -141,7 +145,7 @@ function App() {
                 <input className='edit-reminder-input' type="date" defaultValue={scheduledDateBeingEdited} onChange={(e) => setScheduledDateBeingEdited(e.target.value)} />
                 <input className='edit-reminder-input' type="text" value={nameBeingEdited} onChange={(e) => setNameBeingEdited(e.target.value)} />
               </div>
-              <div className='remove-container'>
+              <div className='edit-reminder-btn-container'>
                 <input type="submit" value={'SUBMIT'} className='edit-reminder-btn' />
                 
               </div>
