@@ -1,6 +1,6 @@
 
 import List from './Comps/List';
-import InputError from './Comps/InputError';
+import InputError from './components/InputError';
 import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
